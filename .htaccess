@@ -1,0 +1,40 @@
+Options -Indexes
+IndexIgnore *
+#php_value error_reporting 1
+AddType application/x-httpd-php .foo
+
+<IfModule mod_php5.c>
+   php_value max_input_vars 50000
+   php_value post_max_size 500M
+   php_value upload_max_filesize 99M
+</IfModule>
+
+<IfModule mod_php7.c>
+   php_value max_input_vars 50000
+   php_value post_max_size 500M
+   php_value upload_max_filesize 99M
+</IfModule>
+
+<IfModule mod_security.c>
+	SecFilterEngine Off
+	SecFilterScanPOST Off
+</IfModule>
+
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php 
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html 
+
+Redirect 301 /totalrepcar http://www.kapitalcompany.com/index.php?page=empresas&cod=000264&mostrar=search-facturas-tab
+Redirect 301 /viavenetto http://www.kapitalcompany.com/index.php?page=empresas&cod=000265&mostrar=search-facturas-tab
+Redirect 301 /stephan http://www.kapitalcompany.com/index.php?page=empresas&cod=000266&mostrar=search-facturas-tab

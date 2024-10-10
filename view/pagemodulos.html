@@ -1,0 +1,21 @@
+{include="header"}
+
+{if="$fsc->cont=='modulo-comercial'"}
+	{include="cont-modulo-comercial"}
+{elseif="$fsc->cont=='modulo-clinicas'"}
+	{include="cont-modulo-clinicas"}
+{elseif="$fsc->cont=='modulo-produccion'"}
+	{include="cont-modulo-produccion"}
+{elseif="$fsc->cont=='modulo-restaurantes'"}
+	{include="cont-modulo-restaurantes"}
+{elseif="$fsc->cont=='modulo-transporte'"}
+	{include="cont-modulo-transporte"}
+{elseif="$fsc->cont=='modulo-talleres'"}
+	{include="cont-modulo-talleres"}
+{elseif="$fsc->cont=='modulo-veterinarias'"}
+	{include="cont-modulo-veterinarias"}
+{elseif="$fsc->cont=='modulo-funerarias'"}
+	{include="cont-modulo-funerarias"}
+{/if}
+
+{include="footer"}

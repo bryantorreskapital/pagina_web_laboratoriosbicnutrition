@@ -1,0 +1,891 @@
+{include="header"}
+<style type="text/css">
+	.disco{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		z-index: 100000;
+		background: rgba(0,0,0,0.6);
+		top: 0;
+		left: 0;
+		display: none;
+	}
+
+	.loader{
+		border: 16px solid #f3f3f3; /* Light grey */
+		border-top: 16px solid #3498db; /* Blue */
+		border-radius: 50%;
+		width: 80px;
+		height: 80px;
+		margin: auto;
+		margin-top: 40vh;
+		animation: spin 2s linear infinite;    
+	}
+
+	@keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+</style>
+<div class="disco" id="loading">
+    <div class="loader"> </div>
+</div>
+	{if="count($fsc->banners_empresa)>0"}
+	<div id="myCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+	  	<div class="carousel-indicators">
+	    	<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+	    	<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+	    	<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+	  	</div>
+	  	<div class="carousel-inner">
+	  		{loop="$fsc->banners_empresa"}
+	  			<div class="carousel-item {if="$counter==0"} active {/if}">
+		      		<img src="{$value}" class="d-block w-100" alt="First Slide">
+		    	</div>
+			{/loop}
+	  	</div>
+	  	<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+	    	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	    	<span class="visually-hidden">Previous</span>
+	  	</button>
+	  	<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+	    	<span class="carousel-control-next-icon" aria-hidden="true"></span>
+	    	<span class="visually-hidden">Next</span>
+	  	</button>
+	</div>
+	{else}
+		<div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+	        <div class="container">
+	            <h1 class="display-3 mb-4 animated slideInDown">{$fsc->empresa->nomcomer_app}</h1>
+	            <p class="mb-2">
+	            	<i class="fa fa-address-book me-3"></i>
+	            	{$fsc->tabla_empresa['direccion']}
+	            </p>
+	            <p class="mb-2">
+	            	<i class="fa fa-phone-square me-3"></i>
+	            	<a href="tel:{$fsc->tabla_empresa['telefono']}">{$fsc->tabla_empresa['telefono']}</a>
+	            </p>
+	            <p class="mb-2">
+	            	<i class="fa fa-envelope me-3"></i>
+	            	{$fsc->tabla_empresa['email']}
+	            </p>
+	        </div>
+	    </div>
+	{/if}
+
+    <div id="modalDetalle" class="modal fade bd-example-modal-lg"  role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	 	<div class="modal-dialog modal-lg" >
+	    	<div class="modal-content">
+	    	
+	    	</div>
+	  	</div>
+	</div>
+
+    <div class="container-fluid">
+    	<div class="d-flex align-items-start">
+		  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+		    <a href="index.php?page=empresas&cod={$fsc->empresa->codcontacto}&mostrar=search-facturas-tab" class="nav-link {if="$fsc->mostrar=='search-facturas-tab'"} active {/if}" id="search-facturas-tab">Facturas</a>
+		    <a href="index.php?page=empresas&cod={$fsc->empresa->codcontacto}&mostrar=search-cotizaciones-tab" class="nav-link {if="$fsc->mostrar=='search-cotizaciones-tab'"} active {/if}" id="search-facturas-tab">Cotizaciones</a>
+		    <a href="index.php?page=empresas&cod={$fsc->empresa->codcontacto}&mostrar=search-pedidos-tab" class="nav-link {if="$fsc->mostrar=='search-pedidos-tab'"} active {/if}" id="search-facturas-tab">Pedidos</a>
+		    <a href="index.php?page=empresas&cod={$fsc->empresa->codcontacto}&mostrar=search-encuesta-tab" class="nav-link {if="$fsc->mostrar=='search-encuesta-tab'"} active {/if}" id="search-encuesta-tab">Encuestas</a>
+		  </div>
+		  <div class="tab-content" id="v-pills-tabContent">
+		    <div class="tab-pane fade {if="$fsc->mostrar=='search-facturas-tab'"} show active {/if}" id="search-facturas" role="tabpanel" aria-labelledby="search-facturas-tab" data-wow-delay="0.15">
+		    	<h1 class="display-6 animated slideInDown">Consulta de facturas</h1>
+		    	<form class="form-inline" action="index.php?page=empresas&cod={$fsc->empresa->codcontacto}&mostrar=search-facturas-tab&action=search-facturas" method="post">
+		    		<input type="hidden" name="codcontacto" value="{$fsc->empresa->codcontacto}">
+		    		<div class="row g-3">
+		    			<div class="col-md-2">
+				    		<label for="desde" class="visually-hidden">Desde</label>
+				    		<input type="date" class="form-control" name="desde" id="desde" value="{$fsc->desde}" placeholder="Desde">
+					  	</div>
+					  	<div class="col-md-2">
+					    	<label for="hasta" class="visually-hidden">Hasta</label>
+					    	<input type="date" class="form-control" name="hasta" id="hasta" value="{$fsc->hasta}" placeholder="Hasta">
+					  	</div>
+					  	<div class="col-md-2">
+				    		<label for="nro_factura" class="visually-hidden">Nro. Factura</label>
+				    		<input type="text" class="form-control" name="nro_factura" id="nro_factura" value="{$fsc->nro_factura}" placeholder="Nro. Factura">
+					  	</div>
+					  	<div class="col-lg-3">
+					    	<label for="cliente" class="visually-hidden">Cliente</label>
+					    	<input type="text" class="form-control" name="cliente" id="cliente" value="{$fsc->cliente}" placeholder="Cliente">
+					  	</div>	
+					  	<div class="col-md-2">
+				    		<label for="anio" class="visually-hidden">Año</label>
+				    		<input type="text" class="form-control" name="anio" id="anio" value="{$fsc->anio}" placeholder="Año Fabricación">
+					  	</div>
+						<div class="col-md-2">
+				    		<label for="placa" class="visually-hidden">Placa</label>
+				    		<input type="text" class="form-control" name="placa" id="placa" value="{$fsc->placa}" placeholder="Placa">
+					  	</div>
+					  	<div class="col-md-3">
+					    	<label for="aseguradora" class="visually-hidden">Aseguradora</label>
+					    	<input type="text" class="form-control" name="aseguradora" id="aseguradora" value="{$fsc->aseguradora}" placeholder="Aseguradora">
+					  	</div>
+					  	<div class="col-md-2">
+					    	<label for="siniestro" class="visually-hidden">Siniestro</label>
+					    	<input type="text" class="form-control" name="siniestro" id="siniestro" value="{$fsc->siniestro}" placeholder="Siniestro">
+					  	</div>
+					  	<div class="col-auto">
+					    	<button type="submit" class="btn btn-primary mb-3">
+					    		<i class="fa fa-search"></i>
+					    		Consultar
+							</button>
+					  	</div>
+		    		</div>
+				</form>
+				<hr>
+
+				<div id="table_facturas_detalle" style="display: none;">
+					<div class="border rounded p-4">
+		                <div class="row g-4">
+		                    <div class="col-12">
+		                        <div class="h-100">
+		                            <div class="d-flex">
+		                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary" onclick="regresarAdminFacturas()">
+		                                    <i class="fa fa-arrow-left text-white"></i>
+		                                </div>
+		                                <div class="ps-3">
+		                                    <h4>Detalle Factura</h4>
+		                                    <table class="table">
+		                                    	<tbody>
+		                                    		<tr>
+		                                    			<th>Código</th>
+		                                    			<th>Nro. Factura</th>
+		                                    			<th>Cliente</th>
+		                                    			<th>Marca de vehículo</th>
+		                                    			<th>Modelo de vechiculo</th>
+		                                    			<th>Año de fabricación</th>
+		                                    			<th>Placa</th>
+		                                    			<th>Aseguradora</th>
+		                                    			<th>Siniestro</th>
+		                                    			<th>Total</th>
+		                                    		</tr>
+		                                    		<tr>
+			                                    		<td id="df_codigo"></td>
+			                                    		<td id="df_nro_factura"></td>
+			                                    		<td id="df_cliente"></td>
+			                                    		<td id="df_marca_vehiculo"></td>
+			                                    		<td id="df_modelo_vehiculo"></td>
+			                                    		<td id="df_anio_fabricacion"></td>
+			                                    		<td id="df_placa"></td>
+			                                    		<td id="df_aseguradora"></td>
+			                                    		<td id="df_siniestro"></td>
+			                                    		<td id="df_total"></td>
+		                                    		</tr>
+		                                    	</tbody>
+		                                    </table>
+
+		                                    <table class="table">
+		                                    	<thead>
+		                                    		<tr>
+		                                    			<th>Articulo</th>
+		                                    			<th>Cantidad</th>
+		                                    			<th>Precio</th>
+		                                    			<th>Dto</th>
+		                                    			<th>Neto</th>
+		                                    			<th>IVA</th>
+		                                    			<th>Total</th>
+		                                    		</tr>
+		                                    	</thead>
+		                                    	<tbody id="table_facturas_detalle_items">
+		                                    		
+		                                    	</tbody>
+		                                    </table>
+		                                </div>
+		                                
+		                            </div>
+		                            <div class="border-bottom mt-4 d-block d-lg-none"></div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>				
+	        	</div>
+
+				<div class="table-responsive" id="table_facturas">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Fecha</th>
+								<th>Nro. Factura</th>
+								<th>Cliente</th>
+								<th>Marca de vechiculo</th>
+								<th>Modelo de vechiculo</th>
+								<th>Año de fabricación</th>
+								<th>Placa</th>
+								<th>Aseguradora</th>
+								<th>Siniestro</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							{loop="$fsc->resultados"}
+								<tr>
+									<td>{$value['idfactura']}</td>
+									<td>{$value['fecha']}</td>
+									<td>{$value['numero_documento_sri']}</td>
+									<td>{$value['nombrecliente']}</td>
+									<td>{$value['fm_marca_vehiculo']}</td>
+									<td>{$value['fm_modelo_vehiculo']}</td>
+									<td>{$value['anio_fabricacion']}</td>
+									<td>{$value['placa']}</td>
+									<td>{$value['aseguradora']}</td>
+									<td>{$value['siniestro']}</td>
+									<td>
+										<button class="btn btn-primary btn-xs" onclick="verDetalleFactura('{$value['idfactura']}')">
+											<i class="fa fa-eye"></i>
+										</button>
+									</td>
+								</tr>
+							{/loop}
+						</tbody>
+					</table>
+					<nav aria-label="Page navigation">
+					  <ul class="pagination">
+					    <li class="page-item"><a class="page-link" href="{if="$fsc->offset >= FS_ITEM_LIMIT"}{$fsc->url}&offset={$fsc->offset-FS_ITEM_LIMIT}{else}#{/if}">Anterior</a></li>
+
+						    {loop="$fsc->paginas()"}
+						    <li{if="$value['actual']"} class="page-item active"{/if}>
+				               <a href="{$value['url']}" class="page-link">{$value['num']}</a>
+				            </li>
+				            {/loop}
+					    <li class="page-item"><a class="page-link" href='{if="$fsc->offset+FS_ITEM_LIMIT < $fsc->total_registros()"}{$fsc->url}&offset={$fsc->offset+FS_ITEM_LIMIT}{else}#{/if}'>Siguiente</a></li>
+
+					  </ul>
+					</nav>
+				</div>
+		    </div>
+		    <div class="tab-pane fade {if="$fsc->mostrar=='search-cotizaciones-tab'"} show active {/if}" id="search-cotizaciones" role="tabpanel" aria-labelledby="search-cotizaciones-tab" data-wow-delay="0.15">
+		    	<h1 class="display-6 animated slideInDown">Consulta de cotizaciones</h1>
+
+		    	<form class="form-inline" action="index.php?page=empresas&cod={$fsc->empresa->codcontacto}&mostrar=search-cotizaciones-tab&action=search-cotizaciones" method="post">
+		    		<input type="hidden" name="codcontacto" value="{$fsc->empresa->codcontacto}">
+		    		<div class="row g-3">
+		    			<div class="col-md-2">
+				    		<label for="desde" class="visually-hidden">Desde</label>
+				    		<input type="date" class="form-control" name="desde" id="desde" value="{$fsc->desde}" placeholder="Desde">
+					  	</div>
+					  	<div class="col-md-2">
+					    	<label for="hasta" class="visually-hidden">Hasta</label>
+					    	<input type="date" class="form-control" name="hasta" id="hasta" value="{$fsc->hasta}" placeholder="Hasta">
+					  	</div>
+					  	<div class="col-md-2">
+				    		<label for="codigo" class="visually-hidden">Código</label>
+				    		<input type="text" class="form-control" name="codigo" id="codigo" value="{$fsc->codigo}" placeholder="Código">
+					  	</div>
+					  	<div class="col-lg-3">
+					    	<label for="cliente" class="visually-hidden">Cliente</label>
+					    	<input type="text" class="form-control" name="cliente" id="cliente" value="{$fsc->cliente}" placeholder="Cliente">
+					  	</div>	
+					  	<div class="col-md-2">
+				    		<label for="anio" class="visually-hidden">Año</label>
+				    		<input type="text" class="form-control" name="anio" id="anio" value="{$fsc->anio}" placeholder="Año Fabricación">
+					  	</div>
+						<div class="col-md-2">
+				    		<label for="placa" class="visually-hidden">Placa</label>
+				    		<input type="text" class="form-control" name="placa" id="placa" value="{$fsc->placa}" placeholder="Placa">
+					  	</div>
+					  	<div class="col-md-3">
+					    	<label for="aseguradora" class="visually-hidden">Aseguradora</label>
+					    	<input type="text" class="form-control" name="aseguradora" id="aseguradora" value="{$fsc->aseguradora}" placeholder="Aseguradora">
+					  	</div>
+					  	<div class="col-md-2">
+					    	<label for="siniestro" class="visually-hidden">Siniestro</label>
+					    	<input type="text" class="form-control" name="siniestro" id="siniestro" value="{$fsc->siniestro}" placeholder="Siniestro">
+					  	</div>
+					  	<div class="col-auto">
+					    	<button type="submit" class="btn btn-primary mb-3">
+					    		<i class="fa fa-search"></i>
+					    		Consultar
+							</button>
+					  	</div>
+		    		</div>
+				</form>
+				<hr>
+
+				<div id="table_cotizaciones_detalle" style="display: none;">
+					<div class="border rounded p-4">
+		                <div class="row g-4">
+		                    <div class="col-12">
+		                        <div class="h-100">
+		                            <div class="d-flex">
+		                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary" onclick="regresarAdminCotizaciones()">
+		                                    <i class="fa fa-arrow-left text-white"></i>
+		                                </div>
+		                                <div class="ps-3">
+		                                    <h4>Detalle Cotización</h4>
+		                                    <table class="table">
+		                                    	<tbody>
+		                                    		<tr>
+		                                    			<th>Código</th>
+		                                    			<th>Cliente</th>
+		                                    			<th>Marca de vehículo</th>
+		                                    			<th>Modelo de vehiculo</th>
+		                                    			<th>Año de fabricación</th>
+		                                    			<th>Placa</th>
+		                                    			<th>Aseguradora</th>
+		                                    			<th>Siniestro</th>
+		                                    			<!--th>Total</th-->
+		                                    			<th></th>
+		                                    		</tr>
+		                                    		<tr>
+			                                    		<td id="dc_codigo"></td>
+			                                    		<td id="dc_cliente"></td>
+			                                    		<td id="dc_marca_vehiculo"></td>
+			                                    		<td id="dc_modelo_vehiculo"></td>
+			                                    		<td id="dc_anio_fabricacion"></td>
+			                                    		<td id="dc_placa"></td>
+			                                    		<td id="dc_aseguradora"></td>
+			                                    		<td id="dc_siniestro"></td>
+			                                    		<!--td id="dc_total"></td-->
+			                                    		<td id="btn_fotos"></td>
+		                                    		</tr>
+		                                    		<tr>
+		                                    			<th>Taller</th>
+		                                    			<th>Ciudad</th>
+		                                    			<th>Telefono</th>
+		                                    			<th>Contacto TRC</th>
+		                                    		</tr>
+		                                    		<tr>
+			                                    		<td id="dc_taller"></td>
+			                                    		<td id="dc_ciudad"></td>
+			                                    		<td id="dc_telefono"></td>
+			                                    		<td id="dc_contacto"></td>
+		                                    		</tr>
+		                                    	</tbody>
+		                                    </table>
+
+		                                    <table class="table">
+		                                    	<thead>
+		                                    		<tr>
+		                                    			<!--th>Aprobado</th-->
+		                                    			<th>Articulo</th>
+		                                    			<th>Cantidad</th>
+		                                    			<th>Observación</th>
+		                                    			<th>Fecha Entrega</th>
+		                                    			<th>Estado</th>
+		                                    			<th></th>
+		                                    			<!--th>Precio</th>
+		                                    			<th>Dto</th>
+		                                    			<th>Neto</th>
+		                                    			<th>IVA</th>
+		                                    			<th>Total</th-->
+		                                    		</tr>
+		                                    	</thead>
+		                                    	<tbody id="table_cotizaciones_detalle_items">
+		                                    		
+		                                    	</tbody>
+		                                    </table>
+		                                </div>
+		                                
+		                            </div>
+		                            <div class="border-bottom mt-4 d-block d-lg-none"></div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>				
+	        	</div>
+
+				<div class="table-responsive" id="table_cotizaciones">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Fecha</th>
+								<th>Código</th>
+								<th>Cliente</th>
+								<th>Marca de vechiculo</th>
+								<th>Modelo de vechiculo</th>
+								<th>Año de fabricación</th>
+								<th>Placa</th>
+								<th>Aseguradora</th>
+								<th>Siniestro</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							{loop="$fsc->resultados"}
+								<tr>
+									<td>{$value['idpresupuesto']}</td>
+									<td>{$value['fecha']}</td>
+									<td>{$value['codigo']}</td>
+									<td>{$value['nombrecliente']}</td>
+									<td>{$value['fm_marca_vehiculo']}</td>
+									<td>{$value['fm_modelo_vehiculo']}</td>
+									<td>{$value['anio_fabricacion']}</td>
+									<td>{$value['placa']}</td>
+									<td>{$value['aseguradora']}</td>
+									<td>{$value['siniestro']}</td>
+									<td>
+										<button class="btn btn-primary btn-xs" onclick="verDetalleCotizacion('{$value['idpresupuesto']}')">
+											<i class="fa fa-eye"></i>
+										</button>
+									</td>
+								</tr>
+							{/loop}
+						</tbody>
+					</table>
+					<nav aria-label="Page navigation">
+					  <ul class="pagination">
+					    <li class="page-item"><a class="page-link" href="{if="$fsc->offset >= FS_ITEM_LIMIT"}{$fsc->url}&offset={$fsc->offset-FS_ITEM_LIMIT}{else}#{/if}">Anterior</a></li>
+
+						    {loop="$fsc->paginas()"}
+						    <li{if="$value['actual']"} class="page-item active"{/if}>
+				               <a href="{$value['url']}" class="page-link">{$value['num']}</a>
+				            </li>
+				            {/loop}
+					    <li class="page-item"><a class="page-link" href='{if="$fsc->offset+FS_ITEM_LIMIT < $fsc->total_registros()"}{$fsc->url}&offset={$fsc->offset+FS_ITEM_LIMIT}{else}#{/if}'>Siguiente</a></li>
+
+					  </ul>
+					</nav>
+				</div>
+				
+		    </div>
+		    <div class="tab-pane fade {if="$fsc->mostrar=='search-pedidos-tab'"} show active {/if}" id="search-pedidos" role="tabpanel" aria-labelledby="search-pedidos-tab" data-wow-delay="0.15">
+		    	<h1 class="display-6 animated slideInDown">Consulta de pedidos</h1>
+
+		    	<form class="form-inline" action="index.php?page=empresas&cod={$fsc->empresa->codcontacto}&mostrar=search-pedidos-tab&action=search-pedidos" method="post">
+		    		<input type="hidden" name="codcontacto" value="{$fsc->empresa->codcontacto}">
+		    		<div class="row g-3">
+		    			<div class="col-md-2">
+				    		<label for="desde" class="visually-hidden">Desde</label>
+				    		<input type="date" class="form-control" name="desde" id="desde" value="{$fsc->desde}" placeholder="Desde">
+					  	</div>
+					  	<div class="col-md-2">
+					    	<label for="hasta" class="visually-hidden">Hasta</label>
+					    	<input type="date" class="form-control" name="hasta" id="hasta" value="{$fsc->hasta}" placeholder="Hasta">
+					  	</div>
+					  	<div class="col-md-2">
+				    		<label for="codigo" class="visually-hidden">Código</label>
+				    		<input type="text" class="form-control" name="codigo" id="codigo" value="{$fsc->codigo}" placeholder="Código">
+					  	</div>
+					  	<div class="col-lg-3">
+					    	<label for="cliente" class="visually-hidden">Cliente</label>
+					    	<input type="text" class="form-control" name="cliente" id="cliente" value="{$fsc->cliente}" placeholder="Cliente">
+					  	</div>	
+					  	<div class="col-md-2">
+				    		<label for="anio" class="visually-hidden">Año</label>
+				    		<input type="text" class="form-control" name="anio" id="anio" value="{$fsc->anio}" placeholder="Año Fabricación">
+					  	</div>
+						<div class="col-md-2">
+				    		<label for="placa" class="visually-hidden">Placa</label>
+				    		<input type="text" class="form-control" name="placa" id="placa" value="{$fsc->placa}" placeholder="Placa">
+					  	</div>
+					  	<div class="col-md-3">
+					    	<label for="aseguradora" class="visually-hidden">Aseguradora</label>
+					    	<input type="text" class="form-control" name="aseguradora" id="aseguradora" value="{$fsc->aseguradora}" placeholder="Aseguradora">
+					  	</div>
+					  	<div class="col-md-2">
+					    	<label for="siniestro" class="visually-hidden">Siniestro</label>
+					    	<input type="text" class="form-control" name="siniestro" id="siniestro" value="{$fsc->siniestro}" placeholder="Siniestro">
+					  	</div>
+					  	<div class="col-auto">
+					    	<button type="submit" class="btn btn-primary mb-3">
+					    		<i class="fa fa-search"></i>
+					    		Consultar
+							</button>
+					  	</div>
+		    		</div>
+				</form>
+				<hr>
+
+				<div id="table_pedidos_detalle" style="display: none;">
+					<div class="border rounded p-4">
+		                <div class="row g-4">
+		                    <div class="col-12">
+		                        <div class="h-100">
+		                            <div class="d-flex">
+		                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary" onclick="regresarAdminPedidos()">
+		                                    <i class="fa fa-arrow-left text-white"></i>
+		                                </div>
+		                                <div class="ps-3">
+		                                    <h4>Detalle Pedido</h4>
+		                                    <table class="table">
+		                                    	<tbody>
+		                                    		<tr>
+		                                    			<th>Código</th>
+		                                    			<th>Cliente</th>
+		                                    			<th>Marca de vehículo</th>
+		                                    			<th>Modelo de vechiculo</th>
+		                                    			<th>Año de fabricación</th>
+		                                    			<th>Placa</th>
+		                                    			<th>Aseguradora</th>
+		                                    			<th>Siniestro</th>
+		                                    			<th>Total</th>
+		                                    		</tr>
+		                                    		<tr>
+			                                    		<td id="dp_codigo"></td>
+			                                    		<td id="dp_cliente"></td>
+			                                    		<td id="dp_marca_vehiculo"></td>
+			                                    		<td id="dp_modelo_vehiculo"></td>
+			                                    		<td id="dp_anio_fabricacion"></td>
+			                                    		<td id="dp_placa"></td>
+			                                    		<td id="dp_aseguradora"></td>
+			                                    		<td id="dp_siniestro"></td>
+			                                    		<td id="dp_total"></td>
+		                                    		</tr>
+		                                    	</tbody>
+		                                    </table>
+
+		                                    <table class="table">
+		                                    	<thead>
+		                                    		<tr>
+		                                    			<th>Articulo</th>
+		                                    			<th>Cantidad</th>
+		                                    			<th>Precio</th>
+		                                    			<th>Dto</th>
+		                                    			<th>Neto</th>
+		                                    			<th>IVA</th>
+		                                    			<th>Total</th>
+		                                    		</tr>
+		                                    	</thead>
+		                                    	<tbody id="table_pedidos_detalle_items">
+		                                    		
+		                                    	</tbody>
+		                                    </table>
+		                                </div>
+		                                
+		                            </div>
+		                            <div class="border-bottom mt-4 d-block d-lg-none"></div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>				
+	        	</div>
+
+				<div class="table-responsive" id="table_pedidos">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Fecha</th>
+								<th>Código</th>
+								<th>Cliente</th>
+								<th>Marca de vechiculo</th>
+								<th>Modelo de vechiculo</th>
+								<th>Año de fabricación</th>
+								<th>Placa</th>
+								<th>Aseguradora</th>
+								<th>Siniestro</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							{loop="$fsc->resultados"}
+								<tr>
+									<td>{$value['idpedido']}</td>
+									<td>{$value['fecha']}</td>
+									<td>{$value['codigo']}</td>
+									<td>{$value['nombrecliente']}</td>
+									<td>{$value['fm_marca_vehiculo']}</td>
+									<td>{$value['fm_modelo_vehiculo']}</td>
+									<td>{$value['anio_fabricacion']}</td>
+									<td>{$value['placa']}</td>
+									<td>{$value['aseguradora']}</td>
+									<td>{$value['siniestro']}</td>
+									<td>
+										<button class="btn btn-primary btn-xs" onclick="verDetallePedidos('{$value['idpedido']}')">
+											<i class="fa fa-eye"></i>
+										</button>
+									</td>
+								</tr>
+							{/loop}
+						</tbody>
+					</table>
+					<nav aria-label="Page navigation">
+					  <ul class="pagination">
+					    <li class="page-item"><a class="page-link" href="{if="$fsc->offset >= FS_ITEM_LIMIT"}{$fsc->url}&offset={$fsc->offset-FS_ITEM_LIMIT}{else}#{/if}">Anterior</a></li>
+
+						    {loop="$fsc->paginas()"}
+						    <li{if="$value['actual']"} class="page-item active"{/if}>
+				               <a href="{$value['url']}" class="page-link">{$value['num']}</a>
+				            </li>
+				            {/loop}
+					    <li class="page-item"><a class="page-link" href='{if="$fsc->offset+FS_ITEM_LIMIT < $fsc->total_registros()"}{$fsc->url}&offset={$fsc->offset+FS_ITEM_LIMIT}{else}#{/if}'>Siguiente</a></li>
+
+					  </ul>
+					</nav>
+				</div>
+				
+		    </div>
+		    <div class="tab-pane fade {if="$fsc->mostrar=='search-encuesta-tab'"} show active {/if}" id="search-encuesta" role="tabpanel" aria-labelledby="search-encuesta-tab" data-wow-delay="0.15">
+				<script type="text/javascript">
+					$(document).ready(function(){
+				   		const fbRender  = document.getElementById("content_form");
+					  	const originalFormData = {$fsc->template_form};
+						const formData = JSON.stringify(originalFormData);
+						$(fbRender).formRender({ formData });
+				   	});
+				</script>
+		    	<h1 class="display-6 animated slideInDown">Encuesta</h1>
+		    	{if="$fsc->tabla_clientes && !$fsc->pendiente"}
+		    	<form id="form-encuesta" action="index.php?page=empresas&cod={$fsc->empresa->codcontacto}&mostrar=search-encuesta-tab&save_encuesta=true" method="post">
+		    		<div class="row">
+						<input type="hidden" name="codcliente" value="{$fsc->tabla_clientes['codcliente']}" >
+						<input type="hidden" name="nombrecliente" value="{$fsc->tabla_clientes['razonsocial']}">
+						<input type="hidden" name="idfactura" value="{$fsc->tabla_facturas['idfactura']}">
+						<input type="hidden" name="codalmacen" value="{$fsc->tabla_facturas['codalmacen']}">
+						<div id="content_form" class="col-md-10"></div>
+					</div>
+					<button type="submit" id="btn_save_encuesta" class="btn btn-primary">Guardar</button>	
+		    	</form>
+		    	{else}
+		    	<h4 class="card bg-info text-white overflow-hidden mb-3">¡Muchas gracias por llenar nuestra encuesta! Valoramos tu opinión y nos ayuda a mejorar.</h4>
+		    	{/if}
+		   	</div>
+		  </div>
+		</div>
+    </div>
+    
+    <div class="modal fade" id="modal_imagenes">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+				  <h4 class="modal-title">Imagenes Asociadas</h4>
+				</div>
+				<div class="modal-body">
+				    <div id="images"></div>
+				</div>
+				<div class="modal-footer">
+			      	<button type="button" class="btn btn-danger" onclick="$('#modal_imagenes').modal('hide')">
+			        	Cerrar
+			      	</button>
+			    </div>
+			</div>
+		</div>
+	</div>
+    
+    <script type="text/javascript">
+
+    	$(document).ready(function(){
+
+    		$('.slick-carousel').click({
+	            arrows: false,
+	            autoplay: true,
+	            autoplaySpeed: 5000,
+	            fade: true,
+	            speed: 1500
+	        });
+
+    		$('#form-encuesta').submit(function (e) {
+    			e.preventDefault();
+    			
+    			$.ajax({
+				    //type: "POST",
+				    url: "index.php?page=empresas&cod={$fsc->empresa->codcontacto}&mostrar=search-encuesta-tab&save_encuesta=true",
+				    method: 'post',
+				    data: $(this).serialize(),
+				    beforeSend: function () {
+				    	$('#btn_save_encuesta').prop('disabled', true);
+				    },
+				    success: function(response) {
+				    	$('#btn_save_encuesta').prop('disabled', false);
+				      	if (response.error==false) {
+				      		alert(response.mensaje);
+				      		window.location.href = "index.php?page=empresas&cod={$fsc->empresa->codcontacto}&mostrar=search-encuesta-tab";
+				      	}else{
+				      		alert(response.mensaje);
+				      	}
+				    }
+			  	});
+    		});
+    	});
+    	
+    	function verDetallePedidos(idpedido) {
+		  	$('#table_pedidos, #table_pedidos_detalle').toggle('slow');
+		  	$.ajax({
+			    type: "POST",
+			    url: "{$fsc->url()}",
+			    data: {
+			      get_pedido: idpedido,
+			      cod: "{$fsc->empresa->codcontacto}"
+			    },
+			    success: function(response) {
+			      	if (response) {
+				        $('#dp_codigo').html(response.cabecera.codigo);
+				        $('#dp_cliente').html(response.cabecera.nombrecliente);
+				        $('#dp_marca_vehiculo').html(response.cabecera.marca_vehiculo);
+				        $('#dp_anio_fabricacion').html(response.cabecera.anio_fabricacion);
+				        $('#dp_placa').html(response.cabecera.placa);
+				        $('#dp_aseguradora').html(response.cabecera.aseguradora);
+				        $('#dp_siniestro').html(response.cabecera.siniestro);
+				        $('#dp_total').html('$' + response.cabecera.total);
+
+				        const html = response.detalle.map(item => `
+				          <tr>
+				            <td>${item.descripcion}</td>
+				            <td>${item.cantidad}</td>
+				            <td>$${item.pvpunitario}</td>
+				            <td>${item.dtopor}%</td>
+				            <td>$${item.pvptotal}</td>
+				            <td>${item.iva}%</td>
+				            <td>$ ${item.total}</td>
+				          </tr>
+				        `).join('');
+
+				        $('#table_pedidos_detalle_items').html(html);
+				    }
+			    }
+		  	});
+		}	
+
+		function verDetalleCotizacion(idpresupuesto) {
+		  	$.ajax({
+			    type: "POST",
+			    url: "{$fsc->url()}",
+			    data: {
+			      	get_cotizacion: idpresupuesto,
+			      	cod: "{$fsc->empresa->codcontacto}"
+			    },
+			    beforeSend: function( xhr ) {
+			    	$("#loading").show();
+				},
+			    success: function(response) {
+			    	$("#loading").hide();
+			      	if (response) {
+				        $('#dc_codigo').html(response.cabecera.codigo);
+				        $('#dc_cliente').html(response.cabecera.nombrecliente);
+				        $('#dc_marca_vehiculo').html(response.cabecera.marca_vehiculo);
+				        $('#dc_modelo_vehiculo').html(response.cabecera.modelo_vehiculo);
+				        $('#dc_anio_fabricacion').html(response.cabecera.anio_fabricacion);
+				        $('#dc_placa').html(response.cabecera.placa);
+				        $('#dc_aseguradora').html(response.cabecera.aseguradora);
+				        $('#dc_siniestro').html(response.cabecera.siniestro);
+				        $('#dc_total').html('$' + response.cabecera.total);
+				        $('#btn_fotos').html('<button class="btn btn-sm btn-primary" onclick="ver_fotos('+idpresupuesto+')"><i class="fa fa-picture-o"></i></button>');
+				        $('#dc_taller').html(response.cabecera.taller);
+				        $('#dc_ciudad').html(response.cabecera.ciudad);
+				        $('#dc_telefono').html(response.cabecera.telefono);
+				        $('#dc_contacto').html(response.cabecera.contacto);
+				        /*const html = response.detalle.map(item => `
+				          <tr>
+				            <td>${item.descripcion}</td>
+				            <td>${item.observacion_linea}</td>
+				            <td>${item.cantidad}</td>
+				            <td>$${item.pvpunitario}</td>
+				            <td>${item.dtopor}%</td>
+				            <td>$${item.pvptotal}</td>
+				            <td>${item.iva}%</td>
+				            <td>$ ${item.total}</td>
+				          </tr>
+				        `).join('');*/
+				        if (response.detalle != undefined) {
+					        var html = response.detalle.map(item => `
+								<tr>
+									<!--td>${item.aprobado == 1 ? 'SI' : 'NO'}</td-->
+									<td>${item.descripcion}</td>
+									<td>${item.cantidad}</td>
+									<td>${item.observacion_linea}</td>
+									<td>${item.fecha_entrega}</td>
+									<td>${item.status}</td>
+									<td><i class="fa fa-eercast" style="color: ${item.color};"></i></td>
+								</tr>
+					        `).join('');
+
+				        } else {
+				        	html = `
+				        		<tr>
+									<td colspan="5" class="text-center">Sin detalles aprobados</td>
+								</tr>
+				        	`;
+				        }
+				        $('#table_cotizaciones_detalle_items').html(html);
+				    }
+		  			$('#table_cotizaciones, #table_cotizaciones_detalle').toggle('slow');
+			    }
+		  	});
+		}	
+
+		function verDetalleFactura(idfactura) {
+		  	$('#table_facturas, #table_facturas_detalle').toggle('slow');
+		  	$.ajax({
+			    type: "POST",
+			    url: "{$fsc->url()}",
+			    data: {
+			      get_factura: idfactura,
+			      cod: "{$fsc->empresa->codcontacto}"
+			    },
+			    success: function(response) {
+			      	if (response) {
+				        $('#df_codigo').html(response.cabecera.codigo);
+				        $('#df_nro_factura').html(response.cabecera.numero_documento_sri);
+				        $('#df_cliente').html(response.cabecera.nombrecliente);
+				        $('#df_marca_vehiculo').html(response.cabecera.marca_vehiculo);
+				        $('#df_anio_fabricacion').html(response.cabecera.anio_fabricacion);
+				        $('#df_placa').html(response.cabecera.placa);
+				        $('#df_aseguradora').html(response.cabecera.aseguradora);
+				        $('#df_siniestro').html(response.cabecera.siniestro);
+				        $('#df_total').html('$' + response.cabecera.total);
+
+				        const html = response.detalle.map(item => `
+				          <tr>
+				            <td>${item.descripcion}</td>
+				            <td>${item.cantidad}</td>
+				            <td>$${item.pvpunitario}</td>
+				            <td>${item.dtopor}%</td>
+				            <td>$${item.pvptotal}</td>
+				            <td>${item.iva}%</td>
+				            <td>$ ${item.total}</td>
+				          </tr>
+				        `).join('');
+
+				        $('#table_facturas_detalle_items').html(html);
+				    }
+			    }
+		  	});
+		}	
+
+		function regresarAdminCotizaciones() {
+    		$('#table_cotizaciones').show('slow');
+    		$('#table_cotizaciones_detalle').hide('slow');
+    	}
+
+    	function regresarAdminFacturas() {
+    		$('#table_facturas').show('slow');
+    		$('#table_facturas_detalle').hide('slow');
+    	}
+
+    	function regresarAdminPedidos() {
+    		$('#table_pedidos').show('slow');
+    		$('#table_pedidos_detalle').hide('slow');
+    	}
+
+    	/*$(document).ready(function() {
+
+    	});*/
+
+    	function ver_fotos(iddoc) {
+    		$("#images").html('')
+    		$.ajax({
+			    type: "POST",
+			    url: "{$fsc->url()}",
+			    data: {
+					get_fotos: iddoc,
+					cod: "{$fsc->empresa->codcontacto}",
+					tipo: 'idpresupuesto'
+			    },
+			    beforeSend: function( xhr ) {
+			    	$("#loading").show();
+				},
+			    success: function(response) {
+			    	img = '';
+			    	$.each(response, function(i, item) {
+			    		img += `
+			    		<div class="col-md-3">
+			    			<a href="${item.ruta}" target="_blank">
+			    				<img src="${item.ruta}" height="250px" width="250px" alt="${item.ruta}">
+			    			</a>
+		    				<p class="text-center">${item.observacion}</p>
+			    		</div>
+			    		`;
+			    	});
+			    	$("#loading").hide();
+			    	$("#images").html(img);
+    				$("#modal_imagenes").modal("show");
+			    }
+			});
+    	}
+    </script>
+{include="footer"}
