@@ -1,0 +1,147 @@
+.text-primary {
+	color: #7EBA30 !important
+}
+
+.btn-primary {
+	background-color: #7EBA30 !important
+}
+
+.navbar {
+	background-color: #7EBA30 !important
+}
+
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
+	color: black;
+}
+
+.navbar .navbar-nav .nav-link {
+	color: white;
+}
+
+.page-header {
+	background-color: red !important;
+}
+
+/* Estilos para el header con video de fondo */
+.header-video {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Ajustes del video de fondo */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Superposición oscura */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Transparencia del fondo */
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilo del logo */
+.logo {
+    max-width: 150px;
+}
+
+/* Contenido centrado */
+.content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	background-color: #7EBA30;
+	border: 10px solid #7EBA30;
+}
+
+/* Imagen del carrusel centrada */
+.carousel-img {    
+   width: auto;          /* Ajusta el ancho automáticamente */
+    max-width: 100%;      /* No excede el ancho del contenedor */
+    max-height: 100%;     /* No excede la altura del contenedor */
+    object-fit: contain;  /* Asegura que la imagen mantenga su proporción */
+    padding: 10px;        /* Espacio interno para evitar que se pegue a los bordes */
+}
+
+/* Mostrar la imagen activa con efecto de desvanecimiento */
+.carousel-item.active .carousel-img {
+    opacity: 1; /* Muestra la imagen activa */
+}
+
+/* Fondo gris para cada diapositiva con altura reducida */
+.carousel-slide-bg {
+    background-color: #ededed; /* Fondo gris */
+    height: 60vh;              /* Altura ajustada del carrusel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+/* Oculta cualquier margen alrededor del carrusel */
+.carousel-inner {
+    padding: 0;
+}
+
+
+/********/
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .carousel-slide-bg {
+        height: 50vh; /* Altura ajustada para pantallas medianas */
+    }
+    .carousel-img {
+        max-width: 90%; /* La imagen ocupa un 90% del contenedor */
+    }
+}
+
+/* Media Query para pantallas muy pequeñas */
+@media (max-width: 576px) {
+    .carousel-slide-bg {
+        height: 40vh; /* Altura reducida para pantallas muy pequeñas */
+    }
+    .carousel-img {
+        max-width: 80%; /* La imagen se reduce aún más en pantallas pequeñas */
+    }
+}
+
+/******PRODUCTOS********/
+.btn-animated {
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.btn-animated:hover {
+    transform: scale(1.1);
+}
+
+.animate__animated {
+    animation-duration: 1s;
+}
+
+#colagenos {
+    display: none;
+}
+
+

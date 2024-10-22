@@ -1,22 +1,83 @@
 {include="header"}
 
 <!-- Page Header Start -->
-<div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+<div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s"  >
     <div class="container">
         <h1 class="display-3 mb-4 animated slideInRight">Productos</h1>
     </div>
 </div>
 <!-- Page Header End -->
 
+    <!-- Personalization Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+
+            <div class="border rounded p-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="row g-4">
+                    <div class="col-lg-12 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="h-100">
+                            <div class="d-flex">
+                                <div class="ps-3">
+                                    <span align='justify'>En BIC Nutrition, ofrecemos suplementos de la más alta calidad, desarrollados bajo estrictos estándares de producción en una planta certificada que cuenta con todos los permisos sanitarios requeridos. Cada uno de nuestros productos está avalado por notificaciones sanitarias vigentes y respaldado por rigurosos estudios científicos que garantizan la eficacia y seguridad de sus componentes. Nos comprometemos a proporcionar soluciones nutricionales confiables, diseñadas para satisfacer las necesidades de nuestros clientes y contribuir a su bienestar integral.</span>
+                                </div>
+                                <div class="border-end d-none d-lg-block"></div>
+                            </div>
+                            <div class="border-bottom mt-4 d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5 text-center fadeIn" id="categorias">
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <a href="#" class="btn btn-animated animate__animated"  onclick="showProducts('colagenos', event)">
+                    <i class="fas fa-dna fa-3x mb-2"></i>
+                    <h5>Colágenos</h5>
+                </a>
+            </div>
+            <div class="col-md-3 mb-4">
+                <a href="#" class="btn btn-animated animate__animated">
+                    <i class="fas fa-lungs fa-3x mb-2"></i>
+                    <h5>Hepatoprotector</h5>
+                </a>
+            </div>
+            <div class="col-md-3 mb-4">
+                <a href="#" class="btn btn-animated animate__animated">
+                    <i class="fas fa-bone fa-3x mb-2"></i>
+                    <h5>Salud Óseo-Articular</h5>
+                </a>
+            </div>
+            <div class="col-md-3 mb-4">
+                <a href="#" class="btn btn-animated animate__animated">
+                    <i class="fas fa-venus-mars fas fa-dna fa-3x mb-2"></i>
+                    <h5>Urogenital</h5>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
 <!-- Productos por Categorías -->
-<div class="container-xxl py-5 fadeIn">
+<div class="container-xxl py-5 fadeIn" id="colagenos">
     <div class="container">
         <div class="accordion" id="productAccordion">
-            <!-- Categoría 1: Suplementos -->
+            <!-- Categoría 1: Colagenos -->
             <div class="accordion-item">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <!-- Botón de Retroceso con Ícono -->
+                    <button class="btn btn-primary" onclick="goBack()">
+                        <i class="fas fa-arrow-left me-2"></i> Volver
+                    </button>
+                </div>
+
                 <h2 class="accordion-header" id="headingOne">
+
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Suplementos
+                        Colegenos
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#productAccordion">
@@ -189,22 +250,24 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Categoría 2: Otros -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Otros
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#productAccordion">
-                    <div class="accordion-body">
-                        <!-- Más productos aquí -->
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+   function showProducts(categoryId, event) {
+        event.preventDefault(); // Previene el comportamiento por defecto del enlace
+        $("#" + categoryId)
+        .show('slide')
+
+        $("#categorias").fadeOut(300); // Oculta las categorías con efecto fade
+    }
+
+    function goBack() {
+        $("#colagenos").fadeOut(300); // Oculta la sección actual con efecto fade
+        $("#categorias").fadeIn(300); // Muestra las categorías
+    }
+
+</script>
 
 {include="footer"}
