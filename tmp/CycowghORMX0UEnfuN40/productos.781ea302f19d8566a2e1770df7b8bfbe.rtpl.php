@@ -464,12 +464,12 @@
                                 <!-- Detalles del Producto en Acordeones -->
                                 <div class="accordion" id="accordionProduct5Details">
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingComposition2">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#composition2" aria-expanded="false" aria-controls="composition2">
+                                        <h2 class="accordion-header" id="headingComposition5">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#composition5" aria-expanded="false" aria-controls="composition5">
                                                 Composición
                                             </button>
                                         </h2>
-                                        <div id="composition2" class="accordion-collapse collapse" aria-labelledby="headingComposition2" data-bs-parent="#accordionProduct5Details">
+                                        <div id="composition5" class="accordion-collapse collapse" aria-labelledby="headingComposition5" data-bs-parent="#accordionProduct5Details">
                                             <div class="accordion-body">
                                                 100% extracto de raíz de maca negra en polvo.
                                             </div>
@@ -477,12 +477,12 @@
                                     </div>
 
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingAdministration2">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#administration2" aria-expanded="false" aria-controls="administration2">
+                                        <h2 class="accordion-header" id="headingAdministration5">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#administration5" aria-expanded="false" aria-controls="administration5">
                                                 Administración y Dosis
                                             </button>
                                         </h2>
-                                        <div id="administration2" class="accordion-collapse collapse" aria-labelledby="headingAdministration2" data-bs-parent="#accordionProduct5Details">
+                                        <div id="administration5" class="accordion-collapse collapse" aria-labelledby="headingAdministration5" data-bs-parent="#accordionProduct5Details">
                                             <div class="accordion-body">
                                                 Administración por vía oral <br> Tomar 2 cápsulas (1g) al día
                                             </div>
@@ -490,12 +490,12 @@
                                     </div>
 
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingContraindications2">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contraindications2" aria-expanded="false" aria-controls="contraindications2">
+                                        <h2 class="accordion-header" id="headingContraindications5">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contraindications5" aria-expanded="false" aria-controls="contraindications5">
                                                 Contraindicaciones y advertencias
                                             </button>
                                         </h2>
-                                        <div id="contraindications2" class="accordion-collapse collapse" aria-labelledby="headingContraindications2" data-bs-parent="#accordionProduct5Details">
+                                        <div id="contraindications5" class="accordion-collapse collapse" aria-labelledby="headingContraindications5" data-bs-parent="#accordionProduct5Details">
                                             <div class="accordion-body">
                                                 Hipersensibilidad a los componentes de la fórmula <br> Manténgase alejado de los niños
                                             </div>
@@ -503,12 +503,12 @@
                                     </div>
 
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingPresentation2">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#presentation2" aria-expanded="false" aria-controls="presentation2">
+                                        <h2 class="accordion-header" id="headingPresentation5">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#presentation5" aria-expanded="false" aria-controls="presentation5">
                                                 Presentación
                                             </button>
                                         </h2>
-                                        <div id="presentation2" class="accordion-collapse collapse" aria-labelledby="headingPresentation2" data-bs-parent="#accordionProduct5Details">
+                                        <div id="presentation5" class="accordion-collapse collapse" aria-labelledby="headingPresentation5" data-bs-parent="#accordionProduct5Details">
                                             <div class="accordion-body">
                                                 Caja por 40 cápsulas de 500mg c/u
                                             </div>
@@ -533,12 +533,12 @@
                                 <!-- Detalles del Producto en Acordeones -->
                                 <div class="accordion" id="accordionProduct6Details">
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingComposition2">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#composition2" aria-expanded="false" aria-controls="composition2">
+                                        <h2 class="accordion-header" id="headingComposition6">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#composition6" aria-expanded="false" aria-controls="composition6">
                                                 Composición
                                             </button>
                                         </h2>
-                                        <div id="composition2" class="accordion-collapse collapse" aria-labelledby="headingComposition2" data-bs-parent="#accordionProduct6Details">
+                                        <div id="composition6" class="accordion-collapse collapse" aria-labelledby="headingComposition6" data-bs-parent="#accordionProduct6Details">
                                             <div class="accordion-body">
                                                 Maca Negra, Mashua, Zinc, Vitamina C.
                                             </div>
@@ -546,12 +546,12 @@
                                     </div>
 
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingAdministration2">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#administration2" aria-expanded="false" aria-controls="administration2">
+                                        <h2 class="accordion-header" id="headingAdministration6">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#administration6" aria-expanded="false" aria-controls="administration6">
                                                 Administración y Dosis
                                             </button>
                                         </h2>
-                                        <div id="administration2" class="accordion-collapse collapse" aria-labelledby="headingAdministration2" data-bs-parent="#accordionProduct6Details">
+                                        <div id="administration6" class="accordion-collapse collapse" aria-labelledby="headingAdministration6" data-bs-parent="#accordionProduct6Details">
                                             <div class="accordion-body">
                                                 Administración por vía oral <br> Tomar 1 cápsulas (500mg) al día
                                             </div>
@@ -559,12 +559,12 @@
                                     </div>
 
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingContraindications2">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contraindications2" aria-expanded="false" aria-controls="contraindications2">
+                                        <h2 class="accordion-header" id="headingContraindications6">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contraindications6" aria-expanded="false" aria-controls="contraindications6">
                                                 Contraindicaciones y advertencias
                                             </button>
                                         </h2>
-                                        <div id="contraindications2" class="accordion-collapse collapse" aria-labelledby="headingContraindications2" data-bs-parent="#accordionProduct6Details">
+                                        <div id="contraindications6" class="accordion-collapse collapse" aria-labelledby="headingContraindications6" data-bs-parent="#accordionProduct6Details">
                                             <div class="accordion-body">
                                                 Hipersensibilidad a los componentes de la fórmula <br> Manténgase alejado de los niños
                                             </div>
@@ -572,12 +572,12 @@
                                     </div>
 
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingPresentation2">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#presentation2" aria-expanded="false" aria-controls="presentation2">
+                                        <h2 class="accordion-header" id="headingPresentation6">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#presentation6" aria-expanded="false" aria-controls="presentation6">
                                                 Presentación
                                             </button>
                                         </h2>
-                                        <div id="presentation2" class="accordion-collapse collapse" aria-labelledby="headingPresentation2" data-bs-parent="#accordionProduct6Details">
+                                        <div id="presentation6" class="accordion-collapse collapse" aria-labelledby="headingPresentation6" data-bs-parent="#accordionProduct6Details">
                                             <div class="accordion-body">
                                                 Caja por 30 cápsulas de 500mg c/u
                                             </div>
