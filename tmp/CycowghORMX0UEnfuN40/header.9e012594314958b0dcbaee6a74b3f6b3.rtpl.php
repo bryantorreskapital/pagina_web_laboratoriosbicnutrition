@@ -215,7 +215,7 @@
                     </div>-->
                     <a href="index.php?page=productos" class="nav-item nav-link <?php if( $fsc->template=='productos' ){ ?> active <?php } ?>">Productos</a>
                     <a href="index.php?page=trabaja_nosotros" class="nav-item nav-link <?php if( $fsc->template=='trabaja_nosotros' ){ ?> active <?php } ?>">Trabaja Con Nosotros</a>
-                    <a href="index.php?page=contact" class="nav-item nav-link <?php if( $fsc->template=='about' ){ ?> active <?php } ?>">Contacto</a>
+                    <a href="index.php?page=contact" class="nav-item nav-link <?php if( $fsc->template=='contact' ){ ?> active <?php } ?>">Contacto</a>
                     <!--<a href="index.php?page=traducir" class="nav-item nav-link <?php if( $fsc->template=='traducir' ){ ?> active <?php } ?>">Traducir</a>-->
                 </div>
                 <div class="d-none d-lg-flex ms-2">

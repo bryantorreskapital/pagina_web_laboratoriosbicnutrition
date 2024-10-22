@@ -5,7 +5,7 @@
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-4">Contáctanos</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker me-3"></i>Quito, Ecuador</p>
+                    <p class="mb-2"><i class="fa fa-map-marker me-3"></i>Cuenca, Ecuador</p>
                     <p class="mb-2"><i class="fa fa-phone me-3"></i>+593 098 8248 665</p>
                     <p class="mb-2" translate="no"><i class="fa fa-envelope me-3"></i>laboratoriosbicnutrition@gmail.com</p>
                     <div class="d-flex pt-2">

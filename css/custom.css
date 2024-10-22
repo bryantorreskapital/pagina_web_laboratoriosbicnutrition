@@ -18,9 +18,6 @@
 	color: white;
 }
 
-.page-header {
-	background-color: red !important;
-}
 
 /* Estilos para el header con video de fondo */
 .header-video {
@@ -141,6 +138,22 @@
 }
 
 #colagenos {
+    display: none;
+}
+
+#hepatoprotector {
+    display: none;
+}
+
+#salud-oseo-articular {
+    display: none;
+}
+
+#urogenital {
+    display: none;
+}
+
+#gym {
     display: none;
 }
 
