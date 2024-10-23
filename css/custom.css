@@ -18,7 +18,6 @@
 	color: white;
 }
 
-
 /* Estilos para el header con video de fondo */
 .header-video {
     position: relative;
@@ -104,6 +103,24 @@
 /********/
 
 /* Media Query para pantallas pequeñas */
+
+@media (max-width: 990px) {
+    .carousel-slide-bg {
+        height: 50vh; /* Altura ajustada para pantallas medianas */
+    }
+    .carousel-img {
+        max-width: 90%; /* La imagen ocupa un 90% del contenedor */
+    }
+
+    .ms-auto {
+		background-color: black !important;
+	}
+
+	.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
+		color: #555555;
+	}
+}
+
 @media (max-width: 768px) {
     .carousel-slide-bg {
         height: 50vh; /* Altura ajustada para pantallas medianas */
@@ -111,6 +128,14 @@
     .carousel-img {
         max-width: 90%; /* La imagen ocupa un 90% del contenedor */
     }
+
+    .ms-auto {
+		background-color: black !important;
+	}
+
+	.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
+		color: #555555;
+	}
 }
 
 /* Media Query para pantallas muy pequeñas */
@@ -121,6 +146,14 @@
     .carousel-img {
         max-width: 80%; /* La imagen se reduce aún más en pantallas pequeñas */
     }
+
+    .ms-auto {
+		background-color: black !important;
+	}
+
+	.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
+		color: #555555;
+	}
 }
 
 /******PRODUCTOS********/
@@ -155,6 +188,12 @@
 
 #gym {
     display: none;
+}
+
+
+/*******FOOTER*******/
+.bg-dark {
+	background-color: black !important;
 }
 
 

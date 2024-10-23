@@ -3,7 +3,7 @@
     <!-- Header con el video de fondo -->
     <header class="header-video">
         <video autoplay muted loop playsinline class="video-background">
-            <source src="img/home/videos/HEADER.mp4" type="video/mp4">
+            <source src="img/home/videos/HEADER2.mp4" type="video/mp4">
             Tu navegador no soporta la reproducción de videos.
         </video>
 
@@ -12,7 +12,7 @@
                 <img src="img/LOGO_SECUNDARIO.png" alt="BIC NUTRITION" class="logo mb-3">
                 <h1 class="text-white">Nuestro Éxito</h1>
                 <h1 class="text-white">es tu Salud</h1>
-                <a href="index.php?page=about" class="btn btn-success btn-lg mt-3">Nosotros</a>
+                <a href="index.php?page=about" class="btn btn-primary rounded-pill btn-lg mt-3">Nosotros</a>
             </div>
         </div>
     </header>
@@ -25,7 +25,7 @@
                     <img class="img-fluid rounded" src="img/home/productos/PRODUCTOS.jpg">
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Productos</p>
+                    <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3"><a href="index.php?page=productos" class="text-primary">Productos</a> </p>
                     <h4 class="display-25 mb-4">Suplementos de Alta Calidad con Diseño Funcional para tu Día a Día</h4>
                     <p class="mb-4" align="justify">Nuestros productos no solo destacan por su calidad, sino también por su presentación práctica y conveniente. Cada producto está diseñado para facilitar su uso diario, con envases modernos y funcionales que garantizan su conservación óptima y facilidad de transporte. 
 

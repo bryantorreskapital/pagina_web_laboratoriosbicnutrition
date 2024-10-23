@@ -180,20 +180,6 @@
                 <img src="img/LOGO_BLANCO.png" alt="BIC NUTRITION" height="50" class="d-inline-block align-text-top">
             </a>
 
-            <!--<a href="index.php?page=home" class="navbar-brand ms-4 ms-lg-0">
-              <svg width="400" height="100" viewBox="0 0 400 100">
-                <style>
-                  .text-dark-logo {
-                    font-size: 2.5rem;
-                    color: #666666 !important;;
-                    font-family: Arial, sans-serif;
-                    font-weight: bold;
-                    text-decoration: none;
-                  }
-                </style>
-                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="text-dark-logo">KAPITAL COMPANY</text>
-              </svg>
-            </a>-->
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -202,21 +188,9 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="index.php?page=home" class="nav-item nav-link <?php if( $fsc->template=='home' ){ ?> active <?php } ?>">Inicio</a>
                     <a href="index.php?page=about" class="nav-item nav-link <?php if( $fsc->template=='about' ){ ?> active <?php } ?>">Nosotros</a>
-                    <!--<a href="index.php?page=solutions" class="nav-item nav-link">Soluciones</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Portafolio</a>
-                        <div class="dropdown-menu border-light m-0">
-                            <a href="index.php?page=empresas" class="dropdown-item">Empresas</a>
-                            <a href="index.php?page=cambio_iva" class="dropdown-item">Cambio I.V.A</a>
-                            <!--<a href="team.html" class="dropdown-item">Team Member</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Page</a>-->
-                        <!--</div>
-                    </div>-->
                     <a href="index.php?page=productos" class="nav-item nav-link <?php if( $fsc->template=='productos' ){ ?> active <?php } ?>">Productos</a>
                     <a href="index.php?page=trabaja_nosotros" class="nav-item nav-link <?php if( $fsc->template=='trabaja_nosotros' ){ ?> active <?php } ?>">Trabaja Con Nosotros</a>
                     <a href="index.php?page=contact" class="nav-item nav-link <?php if( $fsc->template=='contact' ){ ?> active <?php } ?>">Contacto</a>
-                    <!--<a href="index.php?page=traducir" class="nav-item nav-link <?php if( $fsc->template=='traducir' ){ ?> active <?php } ?>">Traducir</a>-->
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="https://facebook.com/ecubicnutrition">
