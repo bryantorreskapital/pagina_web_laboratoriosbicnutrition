@@ -116,6 +116,23 @@
                                     </div>
 
                                     <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingComposition1">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indicaciones1" aria-expanded="false" aria-controls="indicaciones1">
+                                                Indicaciones
+                                            </button>
+                                        </h2>
+                                        <div id="indicaciones1" class="accordion-collapse collapse" aria-labelledby="headingComposition1" data-bs-parent="#accordionProduct1Details">
+                                            <div class="accordion-body">
+                                            ●   Mejora la hidratación y elasticidad de la piel. </br>
+                                            ●   Apoya la salud de las articulaciones y reduce el dolor articular. </br>
+                                            ●   Aumenta la producción de colágeno en el cuerpo. </br>
+                                            ●   Proporciona propiedades antioxidantes y antiinflamatorias. </br>
+                                            ●   Contribuye a la salud cardiovascular y la energía celular. </br>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingAdministration1">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#administration1" aria-expanded="false" aria-controls="administration1">
                                                 Administración y Dosis
@@ -124,6 +141,19 @@
                                         <div id="administration1" class="accordion-collapse collapse" aria-labelledby="headingAdministration1" data-bs-parent="#accordionProduct1Details">
                                             <div class="accordion-body">
                                                 Administración por vía oral <br> Tomar 1 sobre (10g) al día
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingAdministration1">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mecanismoaccion1" aria-expanded="false" aria-controls="mecanismoaccion1">
+                                                Mecanismo de acción
+                                            </button>
+                                        </h2>
+                                        <div id="mecanismoaccion1" class="accordion-collapse collapse" aria-labelledby="headingAdministration1" data-bs-parent="#accordionProduct1Details">
+                                            <div class="accordion-body">
+                                                <p class="text-justify">Este producto combina colágeno hidrolizado, ácido hialurónico y coenzima Q10. El colágeno, como se mencionó anteriormente, promueve la regeneración y elasticidad de la piel y las articulaciones. La vitamina C es esencial para la síntesis de colágeno y actúa como un antioxidante que protege las células del daño oxidativo. El ácido hialurónico actúa como un potente humectante, atrayendo y reteniendo la humedad en la piel y los tejidos articulares, mejorando así la hidratación y la movilidad. La coenzima Q10 es un antioxidante que protege las células del daño oxidativo y puede mejorar la producción de energía celular. La sinergia de estos componentes potencia la salud y apariencia general de la piel, así como la función articular.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -186,6 +216,23 @@
                                     </div>
 
                                     <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingIndicaciones2">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indicaciones2" aria-expanded="false" aria-controls="indicaciones2">
+                                                Indicaciones
+                                            </button>
+                                        </h2>
+                                        <div id="indicaciones2" class="accordion-collapse collapse" aria-labelledby="headingIndicaciones2" data-bs-parent="#accordionProduct2Details">
+                                            <div class="accordion-body">
+                                                ●   Mejora la salud de la piel (elasticidad y firmeza). </br>
+                                                ●   Promueve la salud de las articulaciones y reduce el dolor articular. </br>
+                                                ●   Favorece la recuperación muscular tras el ejercicio. </br>
+                                                ●   Apoya la salud de los huesos. </br>
+                                                ●   Contribuye a la salud del cabello y las uñas. </br>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingAdministration2">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#administration2" aria-expanded="false" aria-controls="administration2">
                                                 Administración y Dosis
@@ -194,6 +241,19 @@
                                         <div id="administration2" class="accordion-collapse collapse" aria-labelledby="headingAdministration2" data-bs-parent="#accordionProduct2Details">
                                             <div class="accordion-body">
                                                 Administración por vía oral <br> Tomar 1 sobre (10g) al día.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingMecanismosAccion2">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mecanismosaccion2" aria-expanded="false" aria-controls="mecanismosaccion2">
+                                                Mecanismo de acción
+                                            </button>
+                                        </h2>
+                                        <div id="mecanismosaccion2" class="accordion-collapse collapse" aria-labelledby="headingMecanismosAccion2" data-bs-parent="#accordionProduct2Details">
+                                            <div class="accordion-body">
+                                                <p class="text-justify">El colágeno hidrolizado consiste en péptidos de colágeno que, al ser consumidos, son absorbidos en el tracto digestivo y luego distribuidos por el organismo. Estos péptidos pueden estimular la producción de colágeno endógeno en la piel, los huesos y las articulaciones. Además, ayudan a mejorar la hidratación y elasticidad de la piel, así como a reducir la inflamación en las articulaciones, promoviendo una mejor movilidad y salud general.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -283,6 +343,23 @@
                                     </div>
 
                                     <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingIndicaciones2">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indicaciones" aria-expanded="false" aria-controls="indicaciones">
+                                                Indicaciones
+                                            </button>
+                                        </h2>
+                                        <div id="indicaciones" class="accordion-collapse collapse" aria-labelledby="headingIndicaciones2" data-bs-parent="#accordionProduct3Details">
+                                            <div class="accordion-body">
+                                                ●   Protección y soporte de la función hepática. </br>
+                                                ●   Ayuda en la regeneración de células hepáticas. </br>
+                                                ●   Reducción de la inflamación en el hígado. </br>
+                                                ●   Promoción de la salud digestiva. </br>
+                                                ●   Aumento de la energía y el bienestar general. </br>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingAdministration2">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#administration2" aria-expanded="false" aria-controls="administration2">
                                                 Administración y Dosis
@@ -291,6 +368,19 @@
                                         <div id="administration2" class="accordion-collapse collapse" aria-labelledby="headingAdministration2" data-bs-parent="#accordionProduct3Details">
                                             <div class="accordion-body">
                                                 Administración por vía oral <br> Tomar 2 cápsulas (1g) al día
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingMecanismosAccion2">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mecanismosAccion" aria-expanded="false" aria-controls="mecanismosAccion">
+                                                Mecanismo de acción
+                                            </button>
+                                        </h2>
+                                        <div id="mecanismosAccion" class="accordion-collapse collapse" aria-labelledby="headingMecanismosAccion2" data-bs-parent="#accordionProduct3Details">
+                                            <div class="accordion-body">
+                                                <p class="text-justify">La silimarina, extraída del cardo mariano, actúa como un potente antioxidante y antiinflamatorio, protegiendo las células hepáticas del daño. La cúrcuma contiene curcumina, que también tiene propiedades antiinflamatorias y antioxidantes. La coenzima Q10 contribuye a la producción de energía en las células hepáticas y protege contra el estrés oxidativo. El complejo B ayuda en el metabolismo celular y apoya la función hepática. Juntos, estos componentes trabajan sinérgicamente para proteger el hígado y mejorar su función</p>
                                             </div>
                                         </div>
                                     </div>
@@ -380,6 +470,23 @@
                                     </div>
 
                                     <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingIndicaciones2">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indicaciones2" aria-expanded="false" aria-controls="indicaciones2">
+                                                Indicaciones
+                                            </button>
+                                        </h2>
+                                        <div id="indicaciones2" class="accordion-collapse collapse" aria-labelledby="headingIndicaciones2" data-bs-parent="#accordionProduct4Details">
+                                            <div class="accordion-body">
+                                                ●   Alivio del dolor y la inflamación articular. </br>
+                                                ●   Mejora de la movilidad y flexibilidad articular. </br>
+                                                ●   Soporte en la regeneración del cartílago. </br>
+                                                ●   Prevención de la degeneración articular. </br>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingAdministration2">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#administration2" aria-expanded="false" aria-controls="administration2">
                                                 Administración y Dosis
@@ -388,6 +495,20 @@
                                         <div id="administration2" class="accordion-collapse collapse" aria-labelledby="headingAdministration2" data-bs-parent="#accordionProduct4Details">
                                             <div class="accordion-body">
                                                 Administración por vía oral <br> Tomar 3 cápsulas (1.5g) al día
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingMecanismosAccion2">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mecanismosaccion2" aria-expanded="false" aria-controls="mecanismosaccion2">
+                                                Mecanismo de acción
+                                            </button>
+                                        </h2>
+                                        <div id="mecanismosaccion2" class="accordion-collapse collapse" aria-labelledby="headingMecanismosAccion2" data-bs-parent="#accordionProduct4Details">
+                                            <div class="accordion-body">
+                                                <p class="text-justify">La glucosamina es un aminoazúcar que se encuentra naturalmente en el cuerpo, y es un componente esencial del cartílago. La pimienta negra ayuda a mejorar la absorción. Su suplementación puede ayudar a estimular la producción de cartílago y lubricación en las articulaciones. Además, tiene propiedades antiinflamatorias potenciadas por la cúrcuma que pueden reducir el dolor y la rigidez articular, mejorando así la función y movilidad.</p>
+
                                             </div>
                                         </div>
                                     </div>
@@ -477,6 +598,22 @@
                                     </div>
 
                                     <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingIndicaciones5">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indicaciones5" aria-expanded="false" aria-controls="indicaciones5">
+                                                Indicaciones
+                                            </button>
+                                        </h2>
+                                        <div id="indicaciones5" class="accordion-collapse collapse" aria-labelledby="headingIndicaciones5" data-bs-parent="#accordionProduct5Details">
+                                            <div class="accordion-body">
+                                                ●   Aumento de la energía y la resistencia física. </br> 
+                                                ●   Mejora de la libido y función sexual. </br>  
+                                                ●   Apoyo en el equilibrio hormonal. </br>   
+                                                ●   Reducción de los síntomas del estrés y la ansiedad. </br>    
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingAdministration5">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#administration5" aria-expanded="false" aria-controls="administration5">
                                                 Administración y Dosis
@@ -485,6 +622,19 @@
                                         <div id="administration5" class="accordion-collapse collapse" aria-labelledby="headingAdministration5" data-bs-parent="#accordionProduct5Details">
                                             <div class="accordion-body">
                                                 Administración por vía oral <br> Tomar 2 cápsulas (1g) al día
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingMecanismoAccion5">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mecanismoaccion5" aria-expanded="false" aria-controls="mecanismoaccion5">
+                                                Mecanismo de acción
+                                            </button>
+                                        </h2>
+                                        <div id="mecanismoaccion5" class="accordion-collapse collapse" aria-labelledby="headingMecanismoAccion5" data-bs-parent="#accordionProduct5Details">
+                                            <div class="accordion-body">
+                                                <p class="text-justify">La maca negra es una variedad de maca que se ha asociado con un aumento de la energía y la vitalidad. Contiene compuestos bioactivos que pueden mejorar la función hormonal y el bienestar general. Además, sus propiedades adaptogénicas pueden ayudar al cuerpo a manejar el estrés, mejorando así el estado de ánimo y la resistencia física.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -517,7 +667,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <hr>
                         <!-- Producto 2 -->
                         <div class="row">
                             <div class="col-lg-4">
@@ -546,6 +696,22 @@
                                     </div>
 
                                     <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingIndicaciones6">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indicaciones6" aria-expanded="false" aria-controls="indicaciones6">
+                                                Indicaciones
+                                            </button>
+                                        </h2>
+                                        <div id="indicaciones6" class="accordion-collapse collapse" aria-labelledby="headingIndicaciones6" data-bs-parent="#accordionProduct6Details">
+                                            <div class="accordion-body">
+                                                ●   Mejora de la libido y función sexual. </br>
+                                                ●   Aumento de la energía y resistencia. </br>
+                                                ●   Apoyo en el equilibrio hormonal. </br>
+                                                ●   Mejora del bienestar general y la vitalidad. </br>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingAdministration6">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#administration6" aria-expanded="false" aria-controls="administration6">
                                                 Administración y Dosis
@@ -554,6 +720,19 @@
                                         <div id="administration6" class="accordion-collapse collapse" aria-labelledby="headingAdministration6" data-bs-parent="#accordionProduct6Details">
                                             <div class="accordion-body">
                                                 Administración por vía oral <br> Tomar 1 cápsulas (500mg) al día
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingMecanismoAccion6">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mecanismoaccion6" aria-expanded="false" aria-controls="mecanismoaccion6">
+                                                Mecanismo de acción
+                                            </button>
+                                        </h2>
+                                        <div id="mecanismoaccion6" class="accordion-collapse collapse" aria-labelledby="headingMecanismoAccion6" data-bs-parent="#accordionProduct6Details">
+                                            <div class="accordion-body">
+                                                <p class="text-justify">La maca mashua es conocida por sus propiedades energizantes y afrodisíacas, que pueden aumentar la libido y mejorar el rendimiento sexual. El zinc es un mineral esencial que juega un papel crucial en la producción de hormonas sexuales y en la salud reproductiva. Juntos, estos componentes ayudan a mejorar la función sexual, el deseo y el equilibrio hormonal.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -643,6 +822,23 @@
                                     </div>
 
                                     <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingIndicaciones2">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indicaciones2" aria-expanded="false" aria-controls="indicaciones2">
+                                                Indicaciones
+                                            </button>
+                                        </h2>
+                                        <div id="indicaciones2" class="accordion-collapse collapse" aria-labelledby="headingIndicaciones2" data-bs-parent="#accordionProduct7Details">
+                                            <div class="accordion-body">
+                                                ●   Aumento de la síntesis de proteínas musculares. </br>
+                                                ●   Reducción de la fatiga durante el ejercicio. </br>
+                                                ●   Mejora en la recuperación muscular post-entrenamiento. </br>
+                                                ●   Prevención de la pérdida de masa muscular. </br>
+                                                ●   Apoyo en el rendimiento deportivo y la resistencia. </br>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingAdministration2">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#administration2" aria-expanded="false" aria-controls="administration2">
                                                 Administración y Dosis
@@ -651,6 +847,19 @@
                                         <div id="administration2" class="accordion-collapse collapse" aria-labelledby="headingAdministration2" data-bs-parent="#accordionProduct7Details">
                                             <div class="accordion-body">
                                                 Administración por vía oral <br> Tomar 1 sobre (10g) al día
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingMecanismosAccion2">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mecanismosaccion2" aria-expanded="false" aria-controls="mecanismosaccion2">
+                                                Mecanismo de acción
+                                            </button>
+                                        </h2>
+                                        <div id="mecanismosaccion2" class="accordion-collapse collapse" aria-labelledby="headingMecanismosAccion2" data-bs-parent="#accordionProduct7Details">
+                                            <div class="accordion-body">
+                                                <p class="text-justify">Los BCAA (aminoácidos de cadena ramificada) están compuestos principalmente por leucina, isoleucina y valina, en una proporción de 2:1:1. La leucina es especialmente importante para iniciar la síntesis de proteínas en el músculo, mientras que la isoleucina y la valina ayudan en la regulación de la energía y la recuperación. La ingesta de BCAA antes o después del ejercicio puede disminuir la fatiga y el dolor muscular, facilitando una recuperación más rápida y eficiente. Además, pueden ayudar a preservar la masa muscular en situaciones de estrés físico, como el entrenamiento intenso o la restricción calórica.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -676,7 +885,7 @@
                                         </h2>
                                         <div id="presentation2" class="accordion-collapse collapse" aria-labelledby="headingPresentation2" data-bs-parent="#accordionProduct7Details">
                                             <div class="accordion-body">
-                                                Caja por 30 cápsulas de 6g c/u
+                                                Caja por 30 sobres de 6g c/u
                                             </div>
                                         </div>
                                     </div>

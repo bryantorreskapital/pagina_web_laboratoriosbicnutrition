@@ -168,7 +168,7 @@
                 <small class="ms-4"><i class="fa fa-clock text-primary me-2"></i>8.00 am - 4.00 pm</small>
             </div>
             <div class="col-lg-6 px-0 text-end" translate="no">
-                <small><i class="fa fa-envelope text-primary me-2" ></i>laboratoriosbicnutrition@gmail.com</small>
+                <small><i class="fa fa-envelope text-primary me-2" ></i>laboratoriobicnutrition@gmail.com</small>
                 <small class="ms-4"><i class="fa fa-phone text-primary me-2"></i>+593 098 8248 665</small>
                 <small class="ms-4"></small>
             </div>
